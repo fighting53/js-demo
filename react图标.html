@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.main {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100vw;
+				height: 100vh;
+				background-color: rgb(40, 44, 52);
+				font-size: calc(10px + 2vmin);
+				color: white;
+			}
+
+			.main__top {
+				position: relative;
+				height: 130px;
+				left: -7%;
+			}
+
+			.ellipse {
+				width: 170px;
+				border: 10px solid rgb(97, 218, 251);
+				height: 45px;
+				border-radius: 80%;
+				position: absolute;
+				left: 0;
+			}
+
+			.ellipse1 {
+				transform: rotate(58deg);
+				animation: trans 20s linear infinite;
+			}
+
+			@keyframes trans {
+				from {
+					transform: rotate(58deg);
+				}
+
+				to {
+					transform: rotate(418deg);
+				}
+			}
+
+			.ellipse2 {
+				transform: rotate(120deg);
+				animation: trans1 20s linear infinite;
+			}
+
+			@keyframes trans1 {
+				from {
+					transform: rotate(120deg);
+				}
+
+				to {
+					transform: rotate(480deg);
+				}
+			}
+
+			.ellipse3 {
+				transform: rotate(0deg);
+				animation: trans2 20s linear infinite;
+			}
+
+			@keyframes trans2 {
+				from {
+					transform: rotate(0deg);
+				}
+
+				to {
+					transform: rotate(360deg);
+				}
+			}
+
+			.ball {
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				background-color: #61dafb;
+				position: fixed;
+				right: 49.5%;
+				top: 37.2%;
+
+			}
+
+			.main__link {
+				padding-top: 20px;
+				color: #61dafb;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="main">
+			<div class="main__top">
+					<div class="ellipse1 ellipse"></div>
+					<div class="ellipse2 ellipse"></div>
+					<div class="ellipse3 ellipse"></div>
+				<div class="ball"></div>
+			</div>
+			<p>Edit src/App.js and save to reload.</p>
+			<a class="main__link" href="https://reactjs.org/">Learn React</a>
+		</header>
+	</body>
+</html>

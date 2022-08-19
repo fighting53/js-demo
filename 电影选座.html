@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>电影选座</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#main__ul{
+				display: flex;
+				list-style: none;
+				flex-wrap: wrap;
+				width: 800px;
+				height:300px;
+				border: 1px solid black;
+				transform: translate(50%);
+			}
+			#main__ul li{
+				width: 64px;
+				height: 40px;
+				margin-left:8px ;
+				background-color: grey
+			}
+			#screen{
+				width: 450px;
+				height: 40px;
+				border: 1px solid black;
+				margin:1px auto ;
+				text-align: center;
+				line-height:40px;
+			}
+			.active{
+				background-color: orange !important;
+				text-align: center;
+				line-height:40px;
+			}
+		</style>
+	</head>
+	<body>
+		<main id = "main">
+			<ul id = "main__ul">
+				<div id="screen"></div>
+			</ul>
+		</main>
+		<script>
+			var main = document.getElementById("main");
+			var ul = document.getElementById("main__ul");
+			var screen = document.getElementById("screen");
+			screen.innerHTML = '屏幕';
+
+			const init = () => {
+				for(let i = 0;i < 44; i++){
+					const li = document.createElement('li');
+					ul.insertBefore(li,screen);
+				}
+				let li = document.getElementsByTagName('li');
+				for(let j = 0;j<li.length;j++){
+					li[j].onclick = () => {
+						let flag = true;
+						console.log(flag);
+						if(flag == true){
+							li[j].setAttribute('class','active');
+							li[j].innerText = '选中';
+							this.flag = false;
+							return flag;
+						}else{
+							li[j].setAttribute('class','');
+							li[j].innerText = '';
+						}
+					}
+				}
+			}
+			window.onload = init;		
+			
+		</script>
+	</body>
+</html>

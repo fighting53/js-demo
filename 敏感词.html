@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>敏感词匹配</title>
+		<style>
+			textarea{
+				font-size: 16px;
+			}
+			input{
+				margin-top: 10px;
+			}
+			p{
+				width: 150px;
+				height: 50px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<textarea placeholder="请输入"></textarea><br>
+			<input type="submit" value="发布" />
+			<p></p>
+			<script>
+				// 获取所有节点
+				var textarea = document.getElementsByTagName('textarea');
+				var input = document.getElementsByTagName('input');
+				var p = document.getElementsByTagName('p');
+				var reg = /fuck|shift/g
+				input[0].onclick = (() => {
+					let newAr = textarea[0].value.replace(reg,'*');
+					p[0].innerText = newAr;
+				})
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul {
+				width: 306px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+			li {
+				border-radius: 10px;
+				width: 100px;
+				height: 100px;
+				list-style-type:none;
+				border: 1px solid black;
+				text-align: center;
+				line-height: 100px;
+			}
+			#chouJiang{
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li id="option">谢谢参与</li>
+			<li id="option">iPhone</li>
+			<li id="option">谢谢参与</li>
+			<li id="option">￥50</li>
+			<li id="chouJiang">点击抽奖</li>
+			<li id="option">200积分</li>
+			<li id="option">谢谢参与</li>
+			<li id="option">一个月会员</li>
+			<li id="option">谢谢参与</li>
+			<script>
+			// 1. 获取节点
+			var chouJiang = document.getElementById('chouJiang');
+			var option = document.querySelectorAll('#option');
+			var timer = null;
+			// 2.点击抽奖按钮
+			chouJiang.addEventListener('click',function(){
+				let num = 0;
+				if(timer == null){
+					timer = setInterval(() => {
+					num++;
+					// 3.清空上一次
+					for(let i = 0;i<option.length;i++){
+						option[i].style.backgroundColor = "#fff";
+					}
+					// 2.随机一个亮
+					var rnd =  Math.floor(Math.random()*option.length)
+					option[rnd].style.backgroundColor = "yellow";
+					// 4.清除定时器
+					if(num >= 10){
+						clearInterval(timer);
+						timer = null;
+					}
+					},100)
+				}
+			})	
+			</script>
+	</body>
+</html>
